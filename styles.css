@@ -104,3 +104,9 @@ padding: 40px;
     background: white;
     padding: 40px;
     }
+    .square-top{
+        position: absolute;
+        background: #303030;
+        width: 100%;
+        height: 50vh;
+    }
