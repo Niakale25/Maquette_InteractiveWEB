@@ -29,24 +29,24 @@
 }
 h1{
   color: white;
-  margin-bottom: 100px;  
+  margin-bottom: 150px;  
   font-size: 2rem;
-  word-wrap: break-word;
+ 
 
 }
 .img{
   width: 100%;
   max-width: 100%;
-  margin-bottom: 100px;
+  margin-bottom: 90px;
   height: auto;
   border-radius: 20px;
   
 }
-.mot-accueil{
+#animateText{
     width: 100%;
     height: auto;
     font-size: 1.1rem;
-    margin-bottom: 20px;
+    margin-top: -25px;
 
 }
 button{
@@ -59,8 +59,19 @@ button{
  border: none;
  
 }
+#animatedText {
+  word-wrap: break-word;
+  display: flex;
+  justify-content: center;
+  gap: 0.2em;
+  text-align: center;
+  max-width: 90%; /* Pour que ça s’adapte à l’écran */
+  line-height: 2;
+  margin: 0 auto;
+}
 #animatedText span {
   display: inline-block;
+  white-space: nowrap;
   opacity: 0;
   filter: blur(4px);
   transform: translateY(20px);
@@ -97,6 +108,8 @@ button{
   }
   
   .cv-container {
+    height: 860px;
+    width: 595px;
     display: flex;
     max-width: 900px;
     height:auto ;
@@ -104,90 +117,121 @@ button{
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
     box-sizing: border-box;
   }
-  .cv-container .left-column{
-    margin-left: 20px;
-  }
+  
   .left-column {
     width: 35%;
     display: flex;
     flex-direction: column;
     align-items: stretch;
-   
+    margin-left: 20px;
   }
   
   .profile-header {
+   
  background-color: #1e1e1e;
   color: white;
   text-align: center;
   padding: 20px 20px 60px; /* on ajoute plus de padding en bas pour laisser de l'espace */
-  border-bottom-left-radius: 100px;
-  border-bottom-right-radius: 100px; /* arrondi sur la droite aussi */
+  border-bottom-left-radius: 100vh;
+  border-bottom-right-radius: 100vh; /* arrondi sur la droite aussi */
   position: relative;
   overflow: visible;
+  height: 300px;
   
   }
   .profile-image {
-    margin-top: 60px;
-    margin-bottom: -50px;
-  display: flex;
-  justify-content: center;
+    position: absolute;
+    top: 100px;
+    bottom: 0px;
+    display: flex; 
+    justify-content: center;
   }
   .profile-image img {
-    width: 120px;
-  height: 120px;
+  
+  width: 160px;
+  height: 160px;
   border-radius: 50%;
   object-fit: cover;
   border: 4px solid white;
   background-color: white;
   box-shadow: 0 2px 6px rgba(0,0,0,0.3);
   }
-  
-  .profile-header h1 {
-    margin-top: 10px;
-    font-size: 18px;
+  .profile-header p, .job-title{
+    line-height: 2;
   }
   
   .job-title {
+    left: 1px;
+    top: 10px;
     font-style: italic;
     font-size: 14px;
     color: #ccc;
   }
-  
-  .contact-section {
+  #ww{
+    margin-left: 25%;
+    margin-top: -14%;
     
-    color: #333;
-    padding: 20px;
-  }
+ }
+ .contact-section{
+  margin-top: 30px;
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+ }
+ .icone{
+  margin-left: 5%;
+  margin-top: -10%;
+  font-size: 30px;
   
-  .contact-section h2 {
-    font-size: 16px;
-    margin: 10px;
-    margin-bottom: 10px;
-  }
-  .contact-section ul{
-    position: relative;
-  }
-  .contact-section ul li{
-    position: relative;
-    list-style: none;
-    margin-left: -30px;
-  }
-  .contact-section ul li .icon{
-    display: inline-block;
-    width: 30px;
-  }
+ }
+
+ .icon{
+  font-size: 15px;
+  margin-left: 10px;
+  margin-top: -8%;
+ }
+
+ .text{
+  margin-left: 30px;
+  margin-top:  -9%;
+  font-size:2vh ;
+ }
   
   .education-section {
     background-color: #1e1e1e;
     color: white;
     padding: 40px;
-    border-top-left-radius: 100px;
-    border-top-right-radius: 100px;
+    height: 50%;
+    border-top-left-radius: 100vh;
+    border-top-right-radius: 100vh;
   }
-  
-  .education-section h2 {
+  .educt{
+    font-size: 15px;
+    margin-left: 10px;
+    margin-top: -8%;
+  }
+  .texte{
+    margin-left: 45px;
+    margin-top:  -20%;
+    font-size:16px;
+  }
+  .education-section i{
+    background: white;
+    color: #303030;
+    border-radius: 100vh;
+    font-size:25px;
+    margin-left: -9px;
+  }
+  .education-section  {
     font-size: 16px;
-    margin-bottom: 10px;
+    margin-bottom: -5;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .formation{
+    font-size: 13px;
   }
   
   .right-column {
@@ -220,8 +264,20 @@ button{
     font-size: 14px;
     color: #444;
     line-height: 1.6;
+    list-style: none;
   }
   
   .skills li {
     margin-bottom: 5px;
   }
+  .text_sec{
+    margin-left: 55px;
+    margin-top:  -6%;
+    font-size:25px;
+  }
+  .iconee{
+    font-size: 15px;
+    margin-left: 10px;
+    margin-top: -6%;
+  }
+ 

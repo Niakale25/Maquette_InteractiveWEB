@@ -11,21 +11,22 @@ if(btnToIndex){
         window.location.href= "index.html";
     } );
 }
-function animateTextByLetter(id) {
+function animateTextByWord(id) {
   const textEl = document.getElementById(id);
   const text = textEl.textContent;
   textEl.innerHTML = "";
 
-  // On coupe le texte en lettres
-  [...text].forEach((char, index) => {
-    const span = document.createElement("span");
-    span.textContent = char;
-    span.style.animationDelay = `${index * 0.05}s`; // délai entre chaque lettre
-    textEl.appendChild(span);
+  const words = text.split(" ");
+
+  words.forEach((word, wordIndex) => {
+    const wordSpan = document.createElement("span");
+    wordSpan.style.animationDelay = `${wordIndex * 0.2}s`; // délai entre les mots
+    wordSpan.textContent = word + " "; // on garde l’espace
+    textEl.appendChild(wordSpan);
   });
 }
 
-// Quand la page se charge, on lance l'animation
 window.addEventListener("DOMContentLoaded", () => {
-  animateTextByLetter("animatedText");
+  animateTextByWord("animatedText");
+  animateTextByWord("animateText");
 });
