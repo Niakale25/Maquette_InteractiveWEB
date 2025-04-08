@@ -1,29 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>page cv</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-</head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  </head>
 <body class="containner">
-    <div class="cv-container">
+    <div class="cv-container" id="cv">
         <!-- Colonne gauche -->
         <div class="left-column">
           <!-- Haut : profil -->
-          <div class="profile-header">
-            <p>Niakalé Diakité</p>
-            <p class="job-title">Graphic & Web Designer</p>
+          <div class="profile-header" id="header">
+            <div id="name-header">
+              <p>Niakalé Diakité</p>
+              <p class="job-title">Graphic & Web Designer</p>
+            </div>
             <div class="profile-image">
                 <img src="img/image1.jpg" alt="Niakalé Diakité">
           </div>
           </div>
     
           <!-- Milieu : Contact -->
-          <div class="contact-section">
-            <div> <span class="icone"><i class="fa fa-user-circle-o" aria-hidden="true"></i>
-            </span> <p id="ww">Contact-moi</p></div>
+          <div class="contact-section" >
+            <div> <span class="icone" id="cont"><img src="img/bxs--user.png" alt="user">
+            </span> <p id="ww">CONTACTEZ-MOI</p></div>
 
             <div> <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i>
             </span> <p class="text">75794044</p></div>
@@ -37,24 +40,27 @@
           </div>
     
           <!-- Bas : Formation -->
-          <div class="education-section">
-            <div ><span class="educt"><i class="fa fa-graduation-cap" aria-hidden="true" style="padding: 3px;"></i></span>
-              <p class="texte"> <Strong>Formation</Strong></p></div>
+          <div class="education-section" id="education">
+            <div ><span class="educt" ><i class="fa fa-graduation-cap" aria-hidden="true" style="padding: 3px;"></i></span>
+            <p class="texte"> <Strong>FORMATION</Strong></p></div>
             <p style="text-align: center; font-size: 13px;"  ><strong>ESGIC</strong></p>
+            <div >
             <p class="formation">Licence en Informatique de Gestion (2023-2024)</p>
             <p class="formation">DUT en Informatique de Gestion (2022-2023)</p>
             <p class="formation">Baccalauréat (LPSRT) (2019-2020)</p>
           </div>
         </div>
-    
+    </div>
         <!-- Colonne droite -->
         <div class="right-column">
-          
+          <div class="propos">
+            
+          </div>
           <div class="section-titre">
-            <div class="icone-container">
+            <div class="icone-container" id="ico">
               <img src="img/woman.png" alt="Compétences">
             </div>
-            <h2>À propos de moi</h2>
+            <h2>À PROPOS DE MOI</h2>
           </div>
           <div class="sectionApropos">           
             <p style="text-align: justify;">
@@ -67,7 +73,7 @@
           </div>
           
             <div class="section-titre">
-              <div class="icone-container">
+              <div class="icone-container" id="wom">
                 <img src="img/woman.png" alt="Compétences">
               </div>
               <h2>COMPETENCES</h2>
@@ -76,38 +82,38 @@
           <div class="competence">
             <span class="label">Microsoft Word</span>
             <div class="progress-bar">
-              <div class="progress" style="width: 60%;"></div>
+              <div class="progress" style="width: 60%;" id="pro"></div>
             </div>
           </div>
 
           <div class="competence">
             <span class="label">Microsoft PowerPoint</span>
             <div class="progress-bar">
-              <div class="progress" style="width: 60%;"></div>
+              <div class="progress" style="width: 60%;" id="pro1"></div>
             </div>
           </div>
 
           <div class="competence">
             <span class="label">HTML-5 / CSS3</span>
             <div class="progress-bar">
-              <div class="progress" style="width: 60%;"></div>
+              <div class="progress" style="width: 60%;" id="pro2"></div>
             </div>
           </div>
 
           <div class="competence">
             <span class="label">Figma</span>
             <div class="progress-bar">
-              <div class="progress" style="width: 60%;"></div>
+              <div class="progress" style="width: 60%;" id="pro3"></div>
             </div>
           </div>
           <div class="competence">
             <span class="label">Python</span>
             <div class="progress-bar">
-              <div class="progress" style="width: 60%;"></div>
+              <div class="progress" style="width: 60%;" id="pro4"></div>
             </div>
           </div>
-          <div class="section-titre">
-            <div class="icone-container">
+          <div class="section-titre" >
+            <div class="icone-container" id="lan">
               <i style="color: white; font-size: 28px;" class="fa fa-globe" aria-hidden="true"></i>
             </div>
             <h2>LANGUES</h2>                 
@@ -120,7 +126,7 @@
             </ul>
           </div> 
           <div class="section-titre">
-            <div class="icone-container">
+            <div class="icone-container" id="lois">
               <img src="img/bxsd.png" alt="Compétences">
             </div>
             <h2>LOISIRS</h2>
@@ -128,14 +134,20 @@
           <div class="ul">
             <ul>
               <li>Cuisine</li>
-              <li>Lecture</li>             
-                           
+              <li>Lecture</li>                                  
             </ul>
           </div>
-          <button id="btnToIndex">Retour Accueil</button>
+          
+
         </div>
-        
       </div>
+      <div id="btnToIndex">
+      <button >Retour Accueil</button></div>
+      <button id="btnTelecharger" class="btn-telecharger">📄 Télécharger mon CV</button>
+
+      <form  >
+      <input id="color" name="color" type="color" value="#30303030">
+     </form>
       <script src="script.js"></script>
 </body>
 </html>
