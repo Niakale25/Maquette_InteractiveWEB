@@ -12,28 +12,40 @@ if(btnToIndex){
     } );
 }
 
-const color= document.getElementById("color");
-color.addEventListener("change", ()=>{
-  setMainColor(color.value);
-})
-function animateTextByWord(id) {
+if(window.location.href == "cv.html"){
+  const color= document.getElementById("color");
+  color.addEventListener("change", ()=>{
+    setMainColor(color.value);
+  });
+}
+function animateTextByLetter(id) {
   const textEl = document.getElementById(id);
-  const text = textEl.textContent;
+  const text = textEl.textContent.trim();
   textEl.innerHTML = "";
 
   const words = text.split(" ");
 
   words.forEach((word, wordIndex) => {
     const wordSpan = document.createElement("span");
-    wordSpan.style.animationDelay = `${wordIndex * 0.2}s`; // délai entre les mots
-    wordSpan.textContent = word + " "; // on garde l’espace
+    wordSpan.style.display = "inline-block";
+
+    [...word].forEach((letter, letterIndex) => {
+      const letterSpan = document.createElement("span");
+      letterSpan.classList.add("letter");
+      const totalIndex = wordIndex * 5 + letterIndex;
+      letterSpan.style.animationDelay = `${totalIndex * 0.05}s`;
+      letterSpan.textContent = letter;
+      wordSpan.appendChild(letterSpan);
+    });
+
+    const space = document.createTextNode(" ");
     textEl.appendChild(wordSpan);
+    textEl.appendChild(space);
   });
 }
-
 window.addEventListener("DOMContentLoaded", () => {
-  animateTextByWord("animatedText");
-  animateTextByWord("animateText");
+  animateTextByLetter("animatedText");
+  animateTextByLetter("animateText");
 });
 function setMainColor(color){
   
@@ -49,6 +61,7 @@ function setMainColor(color){
   document.getElementById("pro2").style.backgroundColor =color;
   document.getElementById("pro3").style.backgroundColor =color;
   document.getElementById("pro4").style.backgroundColor =color;
+  
   
 }
 
@@ -67,7 +80,7 @@ window.addEventListener("DOMContentLoaded", function () {
         scrollY:0 
 
       },
-      jsPDF: { unit: 'px', format: [390,950], orientation: 'portrait' }
+      jsPDF: { unit: 'px', format: [375,930], orientation: 'portrait' }
     };
 
     html2pdf().set(options).from(element).save();
