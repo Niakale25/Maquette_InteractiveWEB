@@ -1,7 +1,7 @@
 const btnToCv = document.getElementById("btnToCv");
 if (btnToCv){
     btnToCv.addEventListener("click", () => {
-window.location.href= "cv.html";
+    window.location.href= "cv.html";
     } );
 }
 
@@ -12,20 +12,19 @@ if(btnToIndex){
     } );
 }
 
-if(window.location.href == "cv.html"){
+if(window.location.href == "http://127.0.0.1:5500/cv.html"){
   const color= document.getElementById("color");
   color.addEventListener("change", ()=>{
     setMainColor(color.value);
   });
 }
-function animateTextByLetter(id) {
+  function animateTextByLetter(id) {
   const textEl = document.getElementById(id);
   const text = textEl.textContent.trim();
   textEl.innerHTML = "";
-
   const words = text.split(" ");
 
-  words.forEach((word, wordIndex) => {
+    words.forEach((word, wordIndex) => {
     const wordSpan = document.createElement("span");
     wordSpan.style.display = "inline-block";
 
@@ -44,8 +43,10 @@ function animateTextByLetter(id) {
   });
 }
 window.addEventListener("DOMContentLoaded", () => {
-  animateTextByLetter("animatedText");
-  animateTextByLetter("animateText");
+  if(window.location.href == "http://127.0.0.1:5500/index.html"){
+    animateTextByLetter("animatedText");
+    animateTextByLetter("animateText");
+  }
 });
 function setMainColor(color){
   
@@ -62,12 +63,10 @@ function setMainColor(color){
   document.getElementById("pro3").style.backgroundColor =color;
   document.getElementById("pro4").style.backgroundColor =color;
   
-  
 }
 
 window.addEventListener("DOMContentLoaded", function () {
   const bouton = document.getElementById("btnTelecharger");
-
   bouton.addEventListener("click", function () {
     const element = document.getElementById("cv");
 
@@ -80,7 +79,7 @@ window.addEventListener("DOMContentLoaded", function () {
         scrollY:0 
 
       },
-      jsPDF: { unit: 'px', format: [375,930], orientation: 'portrait' }
+      jsPDF: { unit: 'px', format: [375,955], orientation: 'portrait' }
     };
 
     html2pdf().set(options).from(element).save();
